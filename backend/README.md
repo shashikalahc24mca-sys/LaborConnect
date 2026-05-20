@@ -10,22 +10,7 @@ This backend powers the LaborConnect mobile app. It exposes REST endpoints for:
 
 - **FastAPI** for the HTTP API.
 - **Firebase Admin SDK** + **Realtime Database** for worker storage.
-- **Python** with `uvicorn` for the development server.
-
-### Setup
-
-1. **Create a Firebase project**
-   - Enable **Realtime Database** in *test mode* for local development.
-
-2. **Use a Service Account key (not the client config)**
-   - The **backend** needs a **Service Account** JSON file. This is **not** the same as:
-     - `google-services.json` (Android/client config), or
-     - The web config (`apiKey`, `authDomain`, etc.) used in the app.
-   - To get the correct file:
-     1. Open [Firebase Console](https://console.firebase.google.com) → your project.
-     2. Go to **Project settings** (gear) → **Service accounts**.
-     3. Click **Generate new private key** and download the JSON.
-   - That file contains `"type": "service_account"` and a `private_key`. Set `FIREBASE_CREDENTIALS_PATH` in `.env` to its **absolute path**.
+- **Python** with `uvicorn` for the development ser
 
 3. **Create a `.env` file**
 
